@@ -1,6 +1,7 @@
 import { Button, Form, FormProps, Input } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { Data } from "../api/message";
 
 type FieldType = {
   name?: string;
@@ -9,14 +10,16 @@ type FieldType = {
 };
 
 const StyledForm = styled(Form<FormProps>)`
-  margin: 0 auto;
+  margin: 40px auto;
   max-width: 360px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
 `;
 
-const TestPage = () => {
+const ContactUsPage = () => {
+  const [data, setData] = useState<Data | null>(null);
+
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
     const response = await fetch("/api/message", {
       method: "POST",
@@ -24,8 +27,7 @@ const TestPage = () => {
       body: JSON.stringify(values),
     });
     const data = await response.json();
-
-    console.log("data", data);
+    setData(data);
   };
 
   const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (
@@ -36,46 +38,50 @@ const TestPage = () => {
 
   return (
     <div>
-      <StyledForm
-        layout="vertical"
-        name="user message form"
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-        requiredMark={"optional"}
-      >
-        <Form.Item<FieldType>
-          label="Name"
-          name="name"
-          rules={[{ required: true, message: "Please input your username!" }]}
+      {data?.response ? (
+        <div>{data?.response}</div>
+      ) : (
+        <StyledForm
+          layout="vertical"
+          name="user message form"
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+          requiredMark={"optional"}
         >
-          <Input />
-        </Form.Item>
+          <Form.Item<FieldType>
+            label="Name"
+            name="name"
+            rules={[{ required: true, message: "Please input your username!" }]}
+          >
+            <Input />
+          </Form.Item>
 
-        <Form.Item<FieldType>
-          label="Email"
-          name="email"
-          rules={[{ required: true, message: "Please input your email!" }]}
-        >
-          <Input />
-        </Form.Item>
+          <Form.Item<FieldType>
+            label="Email"
+            name="email"
+            rules={[{ required: true, message: "Please input your email!" }]}
+          >
+            <Input />
+          </Form.Item>
 
-        <Form.Item<FieldType>
-          label="Message"
-          name="message"
-          rules={[{ required: true, message: "Please input your message!" }]}
-        >
-          <Input.TextArea />
-        </Form.Item>
+          <Form.Item<FieldType>
+            label="Message"
+            name="message"
+            rules={[{ required: true, message: "Please input your message!" }]}
+          >
+            <Input.TextArea />
+          </Form.Item>
 
-        <Form.Item>
-          <Button block type="primary" htmlType="submit">
-            Submit
-          </Button>
-        </Form.Item>
-      </StyledForm>
+          <Form.Item>
+            <Button block type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </StyledForm>
+      )}
     </div>
   );
 };
 
-export default TestPage;
+export default ContactUsPage;
