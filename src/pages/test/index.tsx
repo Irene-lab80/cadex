@@ -57,7 +57,7 @@ const TestPage = () => {
           name="email"
           rules={[{ required: true, message: "Please input your email!" }]}
         >
-          <Input.Password />
+          <Input />
         </Form.Item>
 
         <Form.Item<FieldType>
