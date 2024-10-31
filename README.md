@@ -22,8 +22,7 @@ Installation:
    ```bash
    npm install
    ```
-
-Running the Development Server:
+4. Running the Development Server:
 
 ```bash
 npm run dev
@@ -35,8 +34,10 @@ This will start the development server and open the project in your browser.
 
 CSS Framework: Ant Design
 Styling Approach: styled-components
-Cool techniques used:
-Color Functions: color-mix() allows mixing two colors to create a gradient or intermediate color.
+
+- Cool techniques used:
+- Color Functions: color-mix() allows mixing two colors to create a gradient or intermediate color.
+  Enhanced Motion and Animation. Motion Path: offset-path: path() The ability to animate elements along a defined path, creating complex and dynamic motion effects.
 
 ### SEO (Search Engine Optimization)
 

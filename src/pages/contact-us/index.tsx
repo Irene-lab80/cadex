@@ -7,6 +7,7 @@ import { FormProps } from "antd";
 import styled from "styled-components";
 import { NextSeo } from "next-seo";
 import Script from "next/script";
+import { Loader } from "@/components";
 
 type FieldType = {
   name?: string;
@@ -52,17 +53,31 @@ export const Title = styled.h2`
   color: var(--dark);
 `;
 
+export const Error = styled.div`
+  font-weight: 600;
+  text-align: center;
+  color: red;
+`;
+
 export default function ContactUsPage() {
   const [data, setData] = useState<Data | null>(null);
+  const [status, setStatus] = useState("");
 
   const onFinish: FormProps<FieldType>["onFinish"] = async (values) => {
-    const response = await fetch("/api/message", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
-    });
-    const data = await response.json();
-    setData(data);
+    try {
+      setStatus("loading");
+      const response = await fetch("/api/message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+      const data = await response.json();
+      setData(data);
+    } catch {
+      setStatus("error");
+    } finally {
+      setStatus("finished");
+    }
   };
 
   return (
@@ -79,6 +94,8 @@ export default function ContactUsPage() {
           __html: JSON.stringify(jsonLd),
         }}
       />
+      {status === "loading" && <Loader />}
+      {status === "error" && <Error>Something went wrong</Error>}
 
       <Wrapper>
         {data?.response ? (
