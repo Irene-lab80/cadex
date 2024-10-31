@@ -1,4 +1,7 @@
 import React from "react";
+import LiteYouTubeEmbed from "react-lite-youtube-embed";
+import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+
 import {
   HeroTextContent,
   InnerWrapper,
@@ -7,7 +10,9 @@ import {
   Title,
   YoutubeVideo,
 } from "./HeroSection.styles";
-const embedId = "";
+
+const embedId = "dQw4w9WgXcQ";
+
 export const HeroSection = () => (
   <main>
     <Section>
@@ -21,16 +26,7 @@ export const HeroSection = () => (
           </Text>
         </HeroTextContent>
         <YoutubeVideo>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=RH5Qx-ix2qudBH5J"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullscreen
-          ></iframe>
+          <LiteYouTubeEmbed id={embedId} title="123" />
         </YoutubeVideo>
       </InnerWrapper>
     </Section>
