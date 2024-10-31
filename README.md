@@ -53,4 +53,4 @@ Dynamic imports: improves performance by reducing initial load times and making 
 
 ### Hosting
 
-Deployment Platform: euphonious-kashata-07bf48.netlify.app
+[deployment](euphonious-kashata-07bf48.netlify.app)
