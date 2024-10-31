@@ -3,6 +3,9 @@ import { Footer } from "../footer";
 import { Header } from "../header";
 
 export const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   flex: 1;
 `;
 

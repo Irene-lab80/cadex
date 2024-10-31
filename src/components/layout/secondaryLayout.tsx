@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledDiv = styled.div`
   background: var(--dark);
-  height: 190px;
+  min-height: 190px;
 `;
 
 export default function SecondaryLayout({

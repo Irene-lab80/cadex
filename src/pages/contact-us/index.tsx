@@ -14,12 +14,21 @@ type FieldType = {
 };
 
 export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  flex: 1;
+`;
+
+export const WrapperInner = styled.div`
+  display: flex;
+  flex-direction: column;
   flex: 1;
 `;
 
 export const Title = styled.h2`
   font-weight: 600;
   text-align: center;
+  color: var(--dark);
 `;
 
 export default function ContactUsPage() {
@@ -43,12 +52,14 @@ export default function ContactUsPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Title>Only CTA on the page </Title>
       <Wrapper>
         {data?.response ? (
           <UserMessage message={data?.response} />
         ) : (
-          <Form onFinish={onFinish} />
+          <WrapperInner>
+            <Title>Only CTA on the page </Title>
+            <Form onFinish={onFinish} />
+          </WrapperInner>
         )}
       </Wrapper>
     </>

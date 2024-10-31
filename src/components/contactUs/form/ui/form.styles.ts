@@ -5,6 +5,7 @@ import { FieldType } from "../utils/types";
 export const StyledForm = styled(Form<FormProps>)`
   margin: 40px auto;
   max-width: 360px;
+  width: 100%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -16,19 +17,21 @@ export const StyledForm = styled(Form<FormProps>)`
 `;
 
 export const StyledItem = styled(Form.Item<FieldType>)`
-  /* label {
-    color: #388087 !important;
-  } */
+  && label {
+    color: var(--dark);
+  }
 `;
 
 export const StyledInput = styled(Input)`
   &:focus {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    background: var(--light);
   }
 `;
 
 export const StyledTextArea = styled(Input.TextArea)`
   &:focus {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    background: var(--light);
   }
 `;
