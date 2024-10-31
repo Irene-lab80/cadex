@@ -25,7 +25,7 @@ Installation:
 4. Running the Development Server:
 
 ```bash
-npm run dev
+  npm run dev
 ```
 
 This will start the development server and open the project in your browser.
