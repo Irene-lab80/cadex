@@ -2,8 +2,12 @@ import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
   color: var(--dark);
-  background: var(--light-green);
   width: 100%;
+  background-color: color-mix(
+    in srgb,
+    var(--light-green) 50%,
+    var(--light) 50%
+  );
 `;
 
 export const Wrapper = styled.footer`

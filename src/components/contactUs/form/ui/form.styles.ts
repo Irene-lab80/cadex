@@ -12,7 +12,7 @@ export const StyledForm = styled(Form<FormProps>)`
   background: #ffffff;
 
   @media (max-width: 768px) {
-    margin: 40px 20px 0;
+    margin: 40px auto;
   }
 `;
 
@@ -33,5 +33,10 @@ export const StyledTextArea = styled(Input.TextArea)`
   &:focus {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
     background: var(--light);
+  }
+`;
+export const Wrapper = styled.div`
+  @media (max-width: 768px) {
+    padding: 0 20px;
   }
 `;

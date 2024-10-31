@@ -26,7 +26,7 @@ export const HeroSection = () => (
           </Text>
         </HeroTextContent>
         <YoutubeVideo>
-          <LiteYouTubeEmbed id={embedId} title="123" />
+          <LiteYouTubeEmbed id={embedId} title="Cool Title" />
         </YoutubeVideo>
       </InnerWrapper>
     </Section>
