@@ -1,6 +1,6 @@
 import React from "react";
-import LiteYouTubeEmbed from "react-lite-youtube-embed";
 import "react-lite-youtube-embed/dist/LiteYouTubeEmbed.css";
+const LiteYouTubeEmbed = dynamic(() => import("react-lite-youtube-embed"));
 
 import {
   HeroTextContent,
@@ -10,6 +10,7 @@ import {
   Title,
   YoutubeVideo,
 } from "./HeroSection.styles";
+import dynamic from "next/dynamic";
 
 const embedId = "dQw4w9WgXcQ";
 

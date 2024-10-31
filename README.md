@@ -35,6 +35,8 @@ This will start the development server and open the project in your browser.
 
 CSS Framework: Ant Design
 Styling Approach: styled-components
+Cool techniques used:
+Color Functions: color-mix() allows mixing two colors to create a gradient or intermediate color.
 
 ### SEO (Search Engine Optimization)
 
@@ -46,6 +48,7 @@ Structured Data: structured data for schema.org markup to improve SEO implemente
 Server-Side Rendering (SSR): Next.js automatically handles SSR for pages, which significantly improves initial load times.
 Automatic Code Splitting: Next.js automatically splits code into smaller bundles, reducing initial load times.
 Minification: Next.js automatically minifies JavaScript and CSS during production builds, reducing file sizes
+Dynamic imports: improves performance by reducing initial load times and making code more modular.
 
 ### Hosting
 
