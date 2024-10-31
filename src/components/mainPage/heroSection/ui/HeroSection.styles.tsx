@@ -30,7 +30,6 @@ export const HeroTextContent = styled.div`
 
 export const YoutubeVideo = styled.div`
   max-width: 450px;
-  background: #000;
   width: 100%;
 `;
 
